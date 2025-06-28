@@ -29,7 +29,7 @@ public class Card
 
         if (target.armor > 0)
         {
-            int reducedDamage = Mathf.FloorToInt((incomingDamage / 1.5f) * target.armorResistanses[this.damageType]);
+            int reducedDamage = Mathf.FloorToInt((incomingDamage * 0.75f) * target.armorResistanses[this.damageType]);
             int damageToArmor = Mathf.Min(target.armor, reducedDamage);
             target.armor -= damageToArmor;
 
