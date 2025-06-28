@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         ClearHand(botHand);
         GenerateDecks();
         SpawnCards();
-        statusText.text = "Выберите своего и вражеского монстра";
+        statusText.text = "Выберите своего и вражеского монстра \n Совет: Учитывайте при атаке сопротивления карты к определённым типам урона";
         endTurnButton.interactable = false;
     }
 
@@ -223,7 +223,7 @@ public class GameManager : MonoBehaviour
         {
             if (currentTurn == "player")
             {
-                statusText.text = "Выберите своего и вражеского монстра";
+                statusText.text = "Выберите своего и вражеского монстра \n Совет: Учитывайте при атаке сопротивления карты к определённым типам урона";
             }
             else
             {
