@@ -1,11 +1,8 @@
-using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
 using TMPro;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -17,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     public Button endTurnButton;
     public Button restartButton;
+    public Button backToMenuButton;
     public TextMeshProUGUI statusText;
 
     private List<Card> playerCards = new();
@@ -31,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         restartButton.onClick.AddListener(ResetGame);
         endTurnButton.onClick.AddListener(EndTurn);
+        backToMenuButton.onClick.AddListener(BackToMenu);
         ResetGame();
     }
 
@@ -238,6 +237,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+    }
+
+    void BackToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 }
